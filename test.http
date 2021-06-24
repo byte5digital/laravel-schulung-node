@@ -1,1 +1,9 @@
-GET http://localhost:3333
+POST http://localhost:3333/validate/email
+Content-Type: application/json
+{
+    "email": "mwege@byte5.de",
+    "user": {
+        "name": "Marcel Wege",
+        "email": "mwege@byte5.de"
+    }
+}
