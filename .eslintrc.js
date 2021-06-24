@@ -13,7 +13,6 @@ module.exports = {
 		"plugin:promise/recommended",
 		"plugin:unicorn/recommended",
 		"prettier",
-		"prettier/@typescript-eslint",
 	],
 	env: {
 		node: true,
@@ -25,9 +24,14 @@ module.exports = {
 	},
 	rules: {
 		// As agreed we will use tabs for indentation
-		"indent": ["warn", "tab"],
+        "indent": ["warn", "tab"],
+        "lines-around-directive": 0,
+        "global-require": 0,
 		// Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
-		"no-prototype-builtins": "off",
+        "no-prototype-builtins": "off",
+        "no-buffer-constructor": 0,
+        "no-new-require": 0,
+        "no-path-concat": 0,
 		// https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
 		"import/prefer-default-export": "off",
 		"import/no-default-export": "error",
@@ -40,7 +44,6 @@ module.exports = {
 		],
 		"react/jsx-indent": "off",
 		"react/jsx-indent-props": "off",
-		"@typescript-eslint/interface-name-prefix": ["warn", {"prefixWithI": "always"}],
 		"@typescript-eslint/no-use-before-define": [
 			"error",
 			{functions: false, classes: true, variables: true, typedefs: true},
